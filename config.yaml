@@ -1,0 +1,8 @@
+ssh_authorized_keys:
+- "github:htpc-helper"
+k3os:
+  k3s_args:
+  - server
+  - --no-deploy=traefik
+  - --no-deploy=servicelb
+  - --kubelet-arg=volume-plugin-dir=/var/lib/kubelet/volumeplugins
