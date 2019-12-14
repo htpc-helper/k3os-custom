@@ -1,5 +1,6 @@
 sudo: required
 dist: bionic
+language: generic
 install:
   - curl -SL https://dl.min.io/client/mc/release/linux-amd64/mc -o ~/mc && chmod +x ~/mc
   - sudo apt update && sudo apt install -y xorriso grub-efi mtools
