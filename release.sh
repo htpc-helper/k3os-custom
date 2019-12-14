@@ -23,7 +23,7 @@ umount /mnt
 # Transfer iso to s3
 # mc config host add s3 $ENDPOINT $ACCESS_KEY $SECRET_KEY
 
-mc ls s3
+./mc ls s3
 # mc cp k3os-${RELEASE_VERSION}.iso s3:/
 
 
