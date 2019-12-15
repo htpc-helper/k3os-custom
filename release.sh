@@ -19,7 +19,7 @@ grub-mkrescue -o "k3os-${RELEASE_VERSION}-amd64.iso" iso/
 
 # Transfer iso to s3
 # mc config host add s3 $ENDPOINT $ACCESS_KEY $SECRET_KEY
-
+ls -l
 ./mc ls s3
 # mc cp k3os-${RELEASE_VERSION}.iso s3:/
 
