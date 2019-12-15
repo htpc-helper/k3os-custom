@@ -14,7 +14,7 @@ curl -Lo k3os-amd64.iso $RELEASE_URL
 mkdir iso
 osirrox -indev k3os-amd64.iso -extract / iso/
 mkdir -p iso-new/boot/grub
-cp -rf /iso/k3os iso-new/
+cp -rf iso/k3os iso-new/
 cp iso/boot/grub/grub.cfg iso-new/boot/grub/
 sudo rm -rf iso/k3os/system/config.yaml
 sudo cp config.yaml iso/k3os/system/
