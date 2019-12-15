@@ -11,14 +11,11 @@ echo "Downloading k3os version: v${RELEASE_VERSION}"
 curl -Lo k3os-amd64.iso $RELEASE_URL
 
 # Edit the iso
-sudo mount -o loop k3os.iso /mnt
-mkdir -p iso/boot/grub
-cp -rf /mnt/k3os iso/
+mkdir iso
+osirrox -indev k3os-amd64.iso -extract / iso/
 rm iso/system/config.yaml
 cp config.yaml iso/system/
-cp /mnt/boot/grub/grub.cfg iso/boot/grub/
-grub-mkrescue -o k3os-${RELEASE_VERSION}.iso iso/ 
-sudo umount /mnt
+grub-mkrescue -o "k3os-${RELEASE_VERSION}-amd64.iso" iso/ 
 
 # Transfer iso to s3
 # mc config host add s3 $ENDPOINT $ACCESS_KEY $SECRET_KEY
