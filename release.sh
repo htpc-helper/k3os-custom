@@ -13,8 +13,8 @@ curl -Lo k3os-amd64.iso $RELEASE_URL
 # Edit the iso
 mkdir iso
 osirrox -indev k3os-amd64.iso -extract / iso/
-rm iso/system/config.yaml
-cp config.yaml iso/system/
+rm iso/k3os/system/config.yaml
+cp config.yaml iso/k3os/system/
 grub-mkrescue -o "k3os-${RELEASE_VERSION}-amd64.iso" iso/ 
 
 # Transfer iso to s3
