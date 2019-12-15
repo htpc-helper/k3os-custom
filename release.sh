@@ -18,6 +18,6 @@ sudo cp config.yaml iso/k3os/system/
 grub-mkrescue -o "k3os-${RELEASE_VERSION}-amd64.iso" iso/ 
 
 # Transfer iso to s3
-~/mc cp k3os-${RELEASE_VERSION}-amd64.iso s3:/goong-static/
+~/mc cp k3os-${RELEASE_VERSION}-amd64.iso s3/goong-static/
 
 
