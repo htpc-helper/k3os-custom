@@ -3,7 +3,8 @@ dist: bionic
 language: generic
 install:
   - curl -SL https://dl.min.io/client/mc/release/linux-amd64/mc -o ~/mc && chmod +x ~/mc
-  - sudo apt update && sudo apt install -y xorriso grub-efi mtools
+  - sudo apt update && sudo apt install -y xorriso grub-efi mtools python3-pip user-mode-linux
+  - pip3 install vido
 after_success:
-  - ./release.sh
+  - vido --uml -- /bin/sh -c ./release.sh
 
